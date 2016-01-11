@@ -1,0 +1,6 @@
+*.layout
+
+*.depend
+*wiki-client_build_log.html
+bin/*
+obj/*
