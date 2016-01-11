@@ -2,6 +2,7 @@
 
 #include "io_service_provider.hpp"
 #include "response_header.hpp"
+#include "query.hpp"
 
 #include <boost/asio.hpp>
 #include <boost/asio/ssl.hpp>
@@ -41,14 +42,17 @@ namespace WikiClient
         map["prop"] = "revisions";
         map["rvprop"] = "content";
 
-        Request req("GET", host_, path_, "query", "jsonfm", map);
+        Request req("GET", host_, path_, "query", "json", map);
         auto res = parseResponse(sendRequest(req));
 
         if (res.first.responseCode >= 300)
             throw std::runtime_error(res.first.responseMessage);
 
-        auto body = res.second;
-        return body;
+        //auto body = res.second;
+        QueryBatch queryBatch;
+        auto tree = JSON::parse_json("{body:" + res.second + "}");
+        JSON::parse(queryBatch, "body", tree);
+        return queryBatch.query.get().pages["1"].revisions.front().content;
     }
 //-----------------------------------------------------------------------------------
     std::string Client::sendRequest(Request const& request)
