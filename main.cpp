@@ -1,16 +1,17 @@
 #include "rest/request.hpp"
+#include "rest/client.hpp"
 
 #include <iostream>
+#include <fstream>
 
 int main()
 {
     using namespace WikiClient;
 
-    std::unordered_map <std::string, std::string> map;
-    map["titles"] = "Main Page";
+    Client c("localhost", "/mediawiki", false);
 
-    Request req("GET", "en.wikipedia.org", "query", "", map);
+    std::ofstream writer ("test.html", std::ios_base::binary);
+    writer << c.getPage("Hauptseite");
 
-    std::cout << req.getRequestHeader();
     return 0;
 }
