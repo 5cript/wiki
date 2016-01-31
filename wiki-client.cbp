@@ -32,6 +32,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 			<Add option="-std=c++14" />
+			<Add option="-ftemplate-backtrace-limit=0" />
+			<Add directory="../wiki-client" />
 		</Compiler>
 		<Linker>
 			<Add option="-lws2_32" />
@@ -118,8 +120,6 @@
 		<Unit filename="SimpleJSON/stringify/tmp_util/fundamental/integral.hpp" />
 		<Unit filename="SimpleJSON/stringify/tmp_util/fundamental/is_same.hpp" />
 		<Unit filename="SimpleJSON/stringify/tmp_util/fundamental/null_type.hpp" />
-		<Unit filename="SimpleJSON/test.cpp" />
-		<Unit filename="SimpleJSON/test.h" />
 		<Unit filename="SimpleJSON/utility/base64.cpp" />
 		<Unit filename="SimpleJSON/utility/base64.h" />
 		<Unit filename="SimpleJSON/utility/beauty_stream.cpp" />
