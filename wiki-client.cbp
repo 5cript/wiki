@@ -33,7 +33,7 @@
 			<Add option="-fexceptions" />
 			<Add option="-std=c++14" />
 			<Add option="-ftemplate-backtrace-limit=0" />
-			<Add directory="../wiki-client" />
+			<Add directory="../../wiki-project" />
 		</Compiler>
 		<Linker>
 			<Add option="-lws2_32" />
