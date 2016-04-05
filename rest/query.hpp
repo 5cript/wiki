@@ -8,6 +8,7 @@
 #   include "SimpleJSON/stringify/jss.h"
 #   include "SimpleJSON/stringify/jss_optional.h"
 #   include "SimpleJSON/stringify/jss_fusion_adapted_struct.h"
+#   include "SimpleJSON/utility/rename.h"
 #endif
 
 #include <string>
@@ -39,7 +40,7 @@ namespace WikiClient
     {
         std::string contentformat;
         std::string contentmodel;
-        JSON::rename <std::string, SHORT_STRING("*")> content;
+        JSON::rename <std::string, SJSON_SHORT_STRING("*")> content;
     };
 
     struct Page : public JSON::Stringifiable <Page>
@@ -56,5 +57,6 @@ BOOST_FUSION_ADAPT_STRUCT(WikiClient::QueryBatch, batchcomplete, query)
 BOOST_FUSION_ADAPT_STRUCT(WikiClient::Query, pages)
 BOOST_FUSION_ADAPT_STRUCT(WikiClient::Revision, contentformat, contentmodel, content)
 BOOST_FUSION_ADAPT_STRUCT(WikiClient::Page, pageid, ns, title, revisions)
+
 
 #endif // QUERY_HPP_INCLUDED
