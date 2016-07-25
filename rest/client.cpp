@@ -1,11 +1,11 @@
 #include "client.hpp"
 
+#include <boost/asio.hpp>
+#include <boost/asio/ssl.hpp>
+
 #include "io_service_provider.hpp"
 #include "response_header.hpp"
 #include "query.hpp"
-
-#include <boost/asio.hpp>
-#include <boost/asio/ssl.hpp>
 
 #include <string>
 #include <sstream>
