@@ -10,3 +10,4 @@ __recovery/
 build/*
 build32/*
 Win32/*
+*.stat
