@@ -2,12 +2,13 @@
 #define REST_CLIENT_HPP_INCLUDED
 
 #include "request.hpp"
+#include "../dll.hpp"
 
 #include <string>
 
 namespace WikiClient
 {
-    class Client
+    class DLL_EXPORT Client
     {
     public:
         Client(std::string host, std::string path, bool ssl = false);

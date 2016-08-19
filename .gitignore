@@ -5,3 +5,8 @@
 bin/*
 obj/*
 test.html
+__history/
+__recovery/
+build/*
+build32/*
+Win32/*
